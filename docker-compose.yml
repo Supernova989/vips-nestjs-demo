@@ -5,3 +5,15 @@ services:
       - "3000:3000"
     volumes:
       - ./root-api/src:/user/src/app/src
+    command: yarn run start:dev
+    environment:
+      - PORT=3000
+  admins_microservice:
+    build: ./admins-microservice
+    volumes:
+      - ./admins-microservice/src:/user/src/app/src
+    command: yarn run start:dev
+  nats:
+    image: nats:2.10.9
+    ports:
+      - "4222:4222"
