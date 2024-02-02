@@ -1,0 +1,7 @@
+services:
+  root_api:
+    build: ./root-api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./root-api/src:/user/src/app/src
