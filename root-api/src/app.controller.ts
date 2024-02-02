@@ -7,6 +7,6 @@ export class AppController {
 
   @Get('say-hi')
   getHello() {
-    return this.natsClient.send({ cmd: 'say-hi-command' }, {});
+    return this.natsClient.send({ cmd: 'say-hi-command' }, { numValue1: 10 });
   }
 }
